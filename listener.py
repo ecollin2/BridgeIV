@@ -78,7 +78,7 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
             #print( f"Got {len(events)} entries for block {block_num}" )
             # TODO YOUR CODE HERE
             for evt in events:
-        		data = {
+                data = {
 	                    'chain': chain,
 	                    'token': evt.args['token'],
 	                    'recipient': evt.args['recipient'],
@@ -86,8 +86,8 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
 	                    'transactionHash': evt.transactionHash.hex(),
 	                    'address': evt.address,
 	                    'date': datetime.now().strftime("%m/%d/%Y %H:%M:%S")
-	                }
-	                all_rows.append(data)
+	        }
+	        all_rows.append(data)
 
         df = pd.DataFrame(all_rows)
 	df.to_csv(eventfile, index=False)
