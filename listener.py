@@ -77,7 +77,7 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
             	events = event_filter.get_all_entries()
             #print( f"Got {len(events)} entries for block {block_num}" )
             # TODO YOUR CODE HERE
-        	for evt in events:
+            for evt in events:
         		data = {
 	                    'chain': chain,
 	                    'token': evt.args['token'],
@@ -89,5 +89,5 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
 	                }
 	                all_rows.append(data)
 
-	df = pd.DataFrame(all_rows)
+        df = pd.DataFrame(all_rows)
 	df.to_csv(eventfile, index=False)
