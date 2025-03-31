@@ -87,7 +87,7 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
 	                    'address': evt.address,
 	                    'date': datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 	        }
-	        all_rows.append(data)
+                all_rows.append(data)
 
         df = pd.DataFrame(all_rows)
-	df.to_csv(eventfile, index=False)
+        df.to_csv(eventfile, index=False)
